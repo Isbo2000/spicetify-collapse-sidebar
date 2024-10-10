@@ -44,12 +44,9 @@
             transition: width 0.3s, margin-top 0.3s !important;
             z-index: 12 !important;
         }
-        .main-yourLibraryX-libraryRootlist {
-            padding: 0px !important;
-        }
-        .main-yourLibraryX-header {visibility: hidden !important; transition: visibility 0.1s !important;}
-        .main-yourLibraryX-filterArea {visibility: hidden !important; transition: visibility 0.1s !important;}
-        .main-yourLibraryX-libraryFilter {visibility: hidden !important; transition: visibility 0.1s !important;}
+        .main-yourLibraryX-header {visibility: hidden !important; transition: visibility 0.2s !important;}
+        .main-yourLibraryX-filterArea {visibility: hidden !important; transition: visibility 0.2s !important;}
+        .main-yourLibraryX-libraryFilter {visibility: hidden !important; transition: visibility 0.2s !important;}
 
         #Desktop_LeftSidebar_Id:hover {
             width: 280px !important;
@@ -67,6 +64,9 @@
         }
         #Desktop_LeftSidebar_Id span {
             white-space: nowrap !important;
+        }
+        .main-yourLibraryX-libraryRootlist {
+            padding: 0px !important;
         }
         .os-scrollbar-vertical {
             visibility: hidden !important;
