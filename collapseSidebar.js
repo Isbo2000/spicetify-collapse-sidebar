@@ -1,6 +1,6 @@
 // NAME: Collapse Sidebar
-// AUTHOR: Isbo
-// DESCRIPTION: Expand sidebar on hover
+// AUTHOR: Isbo2000
+// DESCRIPTION: Collapse sidebar and expand on hover
 
 /// <reference path="../globals.d.ts" />
 
