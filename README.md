@@ -6,7 +6,7 @@
 
 Collapse sidebar and expand on hover
 
-Mimics Spotify's native collapse sidebar button, but does it faster and expands on hover.
+Mimics Spotify's native collapse sidebar button, but does it faster and expands when you hover over it.
 
 **Author:** [Isbo2000](https://github.com/Isbo2000)
 
