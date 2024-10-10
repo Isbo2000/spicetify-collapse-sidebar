@@ -1,0 +1,9 @@
+{
+  "name": "Collapse Sidebar",
+	"description": "",
+	"preview": "",
+	"main": "collapseSidebar.js",
+	"readme": "README.md",
+	"authors": [{ "name": "Isbo2000", "url": "https://github.com/Isbo2000" }],
+	"tags": [""]
+}
