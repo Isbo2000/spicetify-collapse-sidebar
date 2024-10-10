@@ -1,7 +1,7 @@
 {
 	"name": "Collapse Sidebar",
 	"description": "Collapse sidebar and expand on hover",
-	"preview": "preview.png",
+	"preview": "preview.gif",
 	"main": "collapseSidebar.js",
 	"readme": "README.md",
 	"authors": [{ "name": "Isbo2000", "url": "https://github.com/Isbo2000" }],
