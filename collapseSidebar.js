@@ -5,37 +5,45 @@
 /// <reference path="../globals.d.ts" />
 
 (function collapseSidebar() {
-    function loop() {
-        const folderItems = Array.from(document.getElementsByClassName("main-yourLibraryX-listItem"))
+    const sidebar = document.getElementById("Desktop_LeftSidebar_Id")
+    var folderItems = Array.from(document.getElementsByClassName("main-yourLibraryX-listItem"))
 
-        if (Object.keys(folderItems).length == 0) {
-            setTimeout(loop, 100);
-            return
+    //check if sidebar is loaded
+    if (Object.keys(folderItems).length == 0) {
+        setTimeout(collapseSidebar, 300);
+        return
+    }
+
+    //initialize folder items on load
+    folderItems.forEach(folderItem => {
+        if (folderItem.getAttribute("style") == "--ylx-folder-depth: 1;") {
+            folderItem.setAttribute("style", "--ylx-folder-depth: 0;")
+            folderItem.classList.add("folderItem")
         }
+    })
 
+    //excecute when mouse enters sidebar area
+    sidebar.addEventListener("mouseenter", (event) => {
+        var folderItems = Array.from(document.getElementsByClassName("folderItem"))
+        if (Object.keys(folderItems).length !== 0) {
+            folderItems.forEach(folderItem => {
+                folderItem.setAttribute("style", "--ylx-folder-depth: 1;")
+            })
+        }
+    })
+    
+    //excecute when mouse leaves sidebar area
+    sidebar.addEventListener("mouseleave", (event) => {
+        var folderItems = Array.from(document.getElementsByClassName("main-yourLibraryX-listItem"))
         folderItems.forEach(folderItem => {
             if (folderItem.getAttribute("style") == "--ylx-folder-depth: 1;") {
                 folderItem.setAttribute("style", "--ylx-folder-depth: 0;")
-                folderItem.classList.add("folderItem")
+                if (!Array.from(folderItem.classList).includes("folderItem")) {
+                    folderItem.classList.add("folderItem")
+                }
             }
         })
-
-        const hoverFolderItems = Array.from(document.querySelectorAll("#Desktop_LeftSidebar_Id:hover .main-yourLibraryX-listItem"))
-
-        if (Object.keys(hoverFolderItems).length == 0) {
-            setTimeout(loop, 100);
-            return
-        }
-
-        hoverFolderItems.forEach(hoverFolderItem => {
-            if (Array.from(hoverFolderItem.classList).includes("folderItem")) {
-                hoverFolderItem.setAttribute("style", "--ylx-folder-depth: 1;")
-                hoverFolderItem.classList.remove("folderItem")
-            }
-        })
-
-        setTimeout(loop, 100);
-    }
+    })
 
     const styles = `
         #Desktop_LeftSidebar_Id {
@@ -80,5 +88,4 @@
     const stylesheet = document.createElement("style")
     stylesheet.textContent = styles
     document.head.appendChild(stylesheet)
-    loop()
 })();
